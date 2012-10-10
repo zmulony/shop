@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: mydb
+  database: shop_development
   pool: 5
   username: zmulony
   password:
@@ -41,7 +41,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: mydb
+  database: shop_test
   pool: 5
   username: zmulony
   password:
@@ -49,7 +49,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: mydb
+  database: shop_production
   pool: 5
   username: zmulony
   password:
