@@ -1,5 +1,8 @@
 Shop::Application.routes.draw do
   root :to => "shop#index"
+  resources :products
+
+  match 'products/:id' => "products#show"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

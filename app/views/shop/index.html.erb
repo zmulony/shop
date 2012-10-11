@@ -1,0 +1,16 @@
+<h1>Welcome to my shop</h1>
+
+<h3>List of products</h3>
+<table>
+	<tr>
+		<td><b>Product</b></td>
+		<td><b>Price</b></td>
+	</tr>
+<% @products.each do |p| %>
+	<tr>
+		<td><%= p.name %></td>
+		<td><%= p.price / 100.0 %></td>
+		<td><%= link_to "More about this product...", p %>
+	</tr>
+<% end %>
+</table>
