@@ -4,6 +4,7 @@ class Products < ActiveRecord::Migration
       p.string :name
       p.text :description
       p.integer :price
+      p.integer :category_id
 
       p.timestamps
     end

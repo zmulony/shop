@@ -3,4 +3,4 @@
 	<p><%= @product.price/100.0 %>$</p><br>
 <b>About:</b><br>
 	<p><%= @product.description %></p><br>
-<%= link_to "Back", root_path %>
+<%= link_to "Back", url_for([@product.category]) %>
