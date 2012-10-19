@@ -1,0 +1,12 @@
+<h3>List of categories</h3>
+<table>
+<% @categories.each do |c| %>
+	<tr>
+		<td><%= c.name %></td>
+		<td><%= link_to "Edit", edit_admin_category_path(c) %></td>
+		<td><%= link_to "Delete", c, :method => :delete %>
+	</tr>
+<% end %>
+</table>
+<br/>
+<%= link_to "Create new category", new_admin_category_path %>

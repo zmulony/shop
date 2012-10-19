@@ -1,0 +1,17 @@
+<h1>Welcome to admin panel</h1>
+
+<h3>List of orders</h3>
+
+<table>
+	<tr>
+		<td><b>Buyer ID</b></td>
+		<td><b>Confirmed?</b></td>
+	</tr>
+<% @orders.each do |t| %>
+	<tr>
+		<td><%= t.buyer_id %></td>
+		<td><%= t.confirmed %></td>
+		<td><%= link_to "Show details", t %>
+	</tr>
+<% end %>
+</table>

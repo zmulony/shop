@@ -1,0 +1,27 @@
+<%= form_for [:admin, @product] do |t| %>
+
+  <p>
+    Name: <br/>
+    <%= t.text_field :name %>
+  </p>
+
+  <p>
+    Price: <br/>
+    <%= t.text_field :price %>
+  </p>
+
+  <p>
+    Category: <br/>
+    <%= collection_select(:product, :category_id, Category.all, :id, :name) %>
+  </p>
+
+  <p>
+    Description: <br/>
+    <%= t.text_area :description %>
+  </p>
+  
+  <p>
+    <%= submit_tag "Create" %> <%= link_to "Back", admin_products_path %>
+  </p>
+  
+<% end %>

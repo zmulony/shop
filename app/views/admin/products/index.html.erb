@@ -1,0 +1,15 @@
+<h3>List of products</h3>
+<table>
+<% @products.each do |p| %>
+	<tr>
+		<td><%= p.name %></td>
+		<td><%= p.price/100.0 %></td>
+		<td><%= p.category.name %></td>
+		<td><%= p.description %></td>
+		<td><%= link_to "Edit", edit_admin_product_path(p) %></td>
+		<td><%= link_to "Delete", [:admin, p], :confirm => "Are you sure?", :method => :delete %>
+	</tr>
+<% end %>
+</table>
+<br/>
+<%= link_to "Create new product", new_admin_product_path %>
