@@ -4,7 +4,7 @@
 	<tr>
 		<td><%= c.name %></td>
 		<td><%= link_to "Edit", edit_admin_category_path(c) %></td>
-		<td><%= link_to "Delete", c, :method => :delete %>
+		<td><%= link_to "Delete", [:admin, c], :confirm => "Are you sure?", :method => :delete %>
 	</tr>
 <% end %>
 </table>
