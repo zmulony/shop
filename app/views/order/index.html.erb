@@ -1,1 +1,28 @@
 <h1>This is your current order</h1>
+
+<table>
+	<tr>
+		<td>Product</td>
+		<td>Quantity</td>
+		<td>Price</td>
+	</tr>
+	<% @cart.order_items.each do |t| %>
+		<tr>
+			<td><%= t.product.name %></td>
+			<td><%= t.quantity %></td>
+			<td><%= t.price / 100.0 %>$</td>
+			<% @total_price += t.price * t.quantity %>
+			<td>
+				<%= form_tag :action => :delete_order_item, :id => t do %>
+					<%= submit_tag 'Remove from cart' %>
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+
+<% if @cart.order_items == [] %>
+	Your cart is empty
+<% else %>
+	<b>Total price:</b><%= @total_price / 100.0 %>$
+<% end %>

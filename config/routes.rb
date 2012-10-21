@@ -1,8 +1,17 @@
 Shop::Application.routes.draw do
+  scope '/admin' do
+    devise_for :admins
+  end
+
   root :to => "shop#index"
   resources :categories
   resources :products
-  match 'cart' => "order#index"
+  resource :order
+  resources :order_items
+
+  match '/cart' => "order#index"
+  match '/cart/add/:id' => "order#add_order_item"
+  match '/cart/delete/:id' => "order#delete_order_item"
 
   namespace :admin do
     root :to => "orders#index"

@@ -1,6 +1,14 @@
+<%= render "shared/shop" %>
+<%= render "shared/link_to_cart" %>
+
 <h3><%= @product.name %></h3>
 <b>Price:</b><br>
 	<p><%= @product.price/100.0 %>$</p><br>
 <b>About:</b><br>
 	<p><%= @product.description %></p><br>
+
+<%= form_tag :controller => :order, :action => :add_order_item, :id => @product do %>
+	<%= submit_tag 'Add to cart' %>
+<% end %>
+
 <%= link_to "Back", url_for([@product.category]) %>

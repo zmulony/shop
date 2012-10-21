@@ -1,4 +1,6 @@
 class Admin::ProductsController < Admin::AdminController
+	before_filter :authenticate_admin!
+	
 	def index
 		@products = Product.all
 	end

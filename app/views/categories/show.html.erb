@@ -1,3 +1,6 @@
+<%= render "shared/shop" %>
+<%= render "shared/link_to_cart" %>
+
 <h3>List of products</h3>
 <table>
 	<tr>
@@ -7,8 +10,8 @@
 <% @products.each do |p| %>
 	<tr>
 		<td><%= p.name %></td>
-		<td><%= p.price/100.0 %></td>
-		<td><%= link_to "More details about this product...", p %>
+		<td><%= p.price/100.0 %>$</td>
+		<td><%= link_to "More details about this product...", p %></td>
 	</tr>
 <% end %>
 </table>

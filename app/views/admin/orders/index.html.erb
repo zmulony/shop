@@ -1,4 +1,4 @@
-<h1>Welcome to admin panel</h1>
+<%= render "shared/admin_panel" %>
 
 <h3>List of orders</h3>
 
@@ -11,7 +11,6 @@
 	<tr>
 		<td><%= t.buyer_id %></td>
 		<td><%= t.confirmed %></td>
-		<td><%= link_to "Show details", t %>
 	</tr>
 <% end %>
 </table>

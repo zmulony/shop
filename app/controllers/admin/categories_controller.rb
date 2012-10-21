@@ -1,4 +1,6 @@
 class Admin::CategoriesController < Admin::AdminController
+	before_filter :authenticate_admin!
+
 	def index
 		@categories = Category.all
 	end
