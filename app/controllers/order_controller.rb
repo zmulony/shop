@@ -29,4 +29,20 @@ class OrderController < ApplicationController
 		
 		redirect_to '/cart'
 	end
+
+	def confirm
+		if @current_buyer.first_name and @current_buyer.last_name
+			@cart.confirmed = true
+			@cart.update_attributes(params[:order])
+
+			render :action => :finalize
+		end
+	end
+
+	def finalize
+		if @current_buyer.update_attributes(params[:buyer])
+			@cart.confirmed = true
+			@cart.update_attributes(params[:order])
+		end
+	end
 end

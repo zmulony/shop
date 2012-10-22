@@ -2,9 +2,9 @@
 
 <table>
 	<tr>
-		<td>Product</td>
-		<td>Quantity</td>
-		<td>Price</td>
+		<td><b>Product</b></td>
+		<td><b>Quantity</b></td>
+		<td><b>Price</b></td>
 	</tr>
 	<% @cart.order_items.each do |t| %>
 		<tr>
@@ -26,3 +26,7 @@
 <% else %>
 	<b>Total price:</b><%= @total_price / 100.0 %>$
 <% end %>
+<br/>
+<%= link_to "Confirm order", :action => :confirm %>
+<br/>
+<%= link_to "Back to main page", root_path %>

@@ -6,12 +6,21 @@ Shop::Application.routes.draw do
   root :to => "shop#index"
   resources :categories
   resources :products
-  resource :order
-  resources :order_items
+
+  resource :order do
+    collection do
+      get 'confirm'
+      post 'finalize'
+    end
+  end
 
   match '/cart' => "order#index"
   match '/cart/add/:id' => "order#add_order_item"
   match '/cart/delete/:id' => "order#delete_order_item"
+  match '/cart/confirm' => "order#confirm"
+  match '/cart/finalize' => "order#finalize"
+
+  resources :order_items
 
   namespace :admin do
     root :to => "orders#index"
