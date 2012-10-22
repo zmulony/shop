@@ -23,7 +23,7 @@
 			<td><%= t.product.name %></td>
 			<td><%= t.quantity %></td>
 			<td><%= t.price / 100.0 %>$</td>
-			<% @total_price += t.price * t.quantity %>
+			<% @total_price += t.price %>
 		</tr>
 	<% end %>
 </table>

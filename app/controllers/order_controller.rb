@@ -11,6 +11,7 @@ class OrderController < ApplicationController
 			order_item = @cart.order_items.create(:product => product, :quantity => 1, :price => product.price)
 		else
 			order_item.quantity += 1
+			order_item.price += product.price
 			order_item.update_attributes(params[:order_item])
 		end
 
@@ -24,6 +25,7 @@ class OrderController < ApplicationController
 			order_item.delete
 		else
 			order_item.quantity -= 1
+			order_item.price -= product.price
 			order_item.update_attributes(params[:order_item])
 		end
 		

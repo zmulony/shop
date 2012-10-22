@@ -11,7 +11,7 @@
 			<td><%= t.product.name %></td>
 			<td><%= t.quantity %></td>
 			<td><%= t.price / 100.0 %>$</td>
-			<% @total_price += t.price * t.quantity %>
+			<% @total_price += t.price %>
 			<td>
 				<%= form_tag :action => :delete_order_item, :id => t do %>
 					<%= submit_tag 'Remove from cart' %>
