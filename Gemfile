@@ -38,3 +38,5 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'devise'
+gem 'ransack'
+gem 'faker'
