@@ -1,0 +1,21 @@
+<%= render "shared/shop" %>
+
+<h3>Wyniki wyszukiwania</h3>
+Znaleziono <%= @results.count %>
+	<% if @results.count == 1 %> wyników
+	<% elsif @results.count > 1 && @results.count < 5 %> wyniki
+	<% else  %> wyników
+	<% end %><br/>
+
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Price</td>
+	</tr>
+	<% @results.each do |t| %>
+		<tr>
+			<td><%= link_to t.name, t %></td>
+			<td><%= t.price / 100.0 %>$</td>
+		</tr>
+	<% end %>
+</table>

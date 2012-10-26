@@ -4,8 +4,16 @@ Shop::Application.routes.draw do
   end
 
   root :to => "shop#index"
+
   resources :categories
-  resources :products
+
+  resources :products do
+    collection do
+      get 'search'
+    end
+  end
+
+  match 'products/search' => "products#search"
 
   resource :order do
     collection do
